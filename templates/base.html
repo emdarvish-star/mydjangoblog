@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" >
   </head>
   <body>
-    <<div class="wrapper">
+    <h2>
+      <a href ="{% url 'articles:List' % }">LOGO</a></h2>
+    <div class="wrapper">
       {% block content %}
 
       {% endblock %}
