@@ -3,7 +3,9 @@ from . import models
 
 # Create your views here.
 def articles_list(request):
-    articles = models.Article.objects.all().order_by('date')
+    articles = models.Article.objects.all().order_by('-date')
     return render(request, 'articles/articleslist.html',{'articles':articles })
+
 def article_detail(request, slug):
-    return HttpResponse(slug)
+    article = models.Article.objects.get(slug=slug)
+    return render(request,'articles/article_detail.html', {'article': article})
